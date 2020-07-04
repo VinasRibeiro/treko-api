@@ -8,6 +8,7 @@ pipeline {
   stages {    
     stage("Build") {
       steps {
+        sh "apk upgrade --update"
         sh "apk add --no-cache mongodb \
            --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main \
            --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/community"
